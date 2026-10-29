@@ -20,3 +20,12 @@ export async function updateTodo(req, res) {
   );
   res.json(todo);
 }
+
+export async function toggleDone(req, res) {
+  const todo = await Todo.findById(req.params.id);
+
+  todo.done = !todo.done;
+  await todo.save();
+  
+  res.json(todo);
+}
