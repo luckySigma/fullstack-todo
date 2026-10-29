@@ -10,3 +10,13 @@ export async function createTodo(req, res) {
   const todo = await Todo.create({ title, description });
   res.status(201).json(todo);
 }
+
+export async function updateTodo(req, res) {
+  const { title, description } = req.body || {};
+  const todo = await Todo.findByIdAndUpdate(
+    req.params.id,
+    { title, description },
+    { new: true, runValidators: true },
+  );
+  res.json(todo);
+}
