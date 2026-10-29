@@ -18,11 +18,20 @@ export async function updateTodo(req, res) {
     { title, description },
     { new: true, runValidators: true },
   );
+
+  if (!todo) {
+    return res.status(404).json({ message: "Todo not found" });
+  }
+
   res.json(todo);
 }
 
 export async function toggleDone(req, res) {
   const todo = await Todo.findById(req.params.id);
+
+  if (!todo) {
+    return res.status(404).json({ message: "Todo not found" });
+  }
 
   todo.done = !todo.done;
   await todo.save();
@@ -32,6 +41,10 @@ export async function toggleDone(req, res) {
 
 export async function deleteTodo(req, res) {
   const todo = await Todo.findByIdAndDelete(req.params.id);
+
+  if (!todo) {
+    return res.status(404).json({ message: "Todo not found" });
+  }
 
   res.json({ message: "Todo deleted", id: todo._id });
 }
