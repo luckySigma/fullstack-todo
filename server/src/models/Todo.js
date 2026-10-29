@@ -1,6 +1,8 @@
+import mongoose from "mongoose";
+
 const todoSchema = new mongoose.Schema(
   {
-    titile: {
+    title: {
       type: String,
       required: [true, "Title is required"],
       trim: true,
