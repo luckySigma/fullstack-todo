@@ -26,6 +26,12 @@ export async function toggleDone(req, res) {
 
   todo.done = !todo.done;
   await todo.save();
-  
+
   res.json(todo);
+}
+
+export async function deleteTodo(req, res) {
+  const todo = await Todo.findByIdAndDelete(req.params.id);
+
+  res.json({ message: "Todo deleted", id: todo._id });
 }
