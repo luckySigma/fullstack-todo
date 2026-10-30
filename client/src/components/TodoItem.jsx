@@ -2,8 +2,11 @@ import React from "react";
 
 function TodoItem({ todo }) {
   return (
-    <li>
-      <span>{todo.description && <p>{todo.description}</p>}</span>
+    <li className={todo.done ? "todo-item done" : "todo-item"}>
+      <div>
+        <span className="todo-title">{todo.title && <p>{todo.title}</p>}</span>
+        {todo.description && <p>{todo.description}</p>}
+      </div>
     </li>
   );
 }
