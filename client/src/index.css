@@ -43,6 +43,43 @@ form button {
   border: none;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  margin-bottom: 8px;
+  background: white;
+  border-radius: 6px;
+  transition: opacity 0.2s;
+}
+
+.todo-item > div {
+  flex: 1;
+}
+
+.todo-item p {
+  margin: 4px 0 0;
+  color: #6b7280;
+}
+
+.todo-item.done {
+  opacity: 0.5;
+}
+
+.todo-item.done .todo-title {
+  text-decoration: line-through;
+}
+
+.delete {
+  color: red;
+}
+
 .error {
   color: red;
   margin: 0;
