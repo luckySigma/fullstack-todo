@@ -1,4 +1,4 @@
-import { getTodos } from "../apis/todos";
+import * as api from "../apis/todos";
 import { useState, useEffect } from "react";
 
 export function useTodos() {
@@ -9,7 +9,7 @@ export function useTodos() {
   useEffect(() => {
     async function loadTodos() {
       try {
-        const data = await getTodos();
+        const data = await api.getTodos();
         setTodos(data);
       } catch (err) {
         setError(err.message);
@@ -21,5 +21,10 @@ export function useTodos() {
     loadTodos();
   }, []);
 
-  return { todos, loading, error };
+  async function addTodo(newTodo) {
+    const created = await api.createTodo(newTodo);
+    setTodos((current) => [created, ...current]);
+  }
+
+  return { todos, loading, error, addTodo };
 }
