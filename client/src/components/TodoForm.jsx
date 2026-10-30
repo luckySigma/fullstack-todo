@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 function TodoForm({ onAdd }) {
   const [title, setTitle] = useState("");
@@ -28,7 +28,10 @@ function TodoForm({ onAdd }) {
       <input
         placeholder="Title"
         value={title}
-        onChange={(e) => setTitle(e.target.value)}
+        onChange={(e) => {
+          setTitle(e.target.value);
+          setError("");
+        }}
       />
       <textarea
         placeholder="Description(optional)"
