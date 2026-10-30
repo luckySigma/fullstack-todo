@@ -1,4 +1,3 @@
-import "./index.css";
 import TodoList from "./components/TodoList";
 import { useTodos } from "./hooks/useTodos";
 import TodoForm from "./components/TodoForm";
