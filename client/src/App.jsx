@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
 import "./index.css";
-import { getTodos } from "./apis/todos";
 import TodoList from "./components/TodoList";
 import { useTodos } from "./hooks/useTodos";
 import TodoForm from "./components/TodoForm";

@@ -32,9 +32,9 @@ export function useTodos() {
     try {
       const updated = await api.toggleTodo(id);
       setTodos((current) =>
-        current.map((todo) => (todo._id == id ? updated : todo)),
+        current.map((todo) => (todo._id === id ? updated : todo)),
       );
-    } catch (error) {
+    } catch (err) {
       setActionError(err.message);
     }
   }
@@ -44,7 +44,7 @@ export function useTodos() {
     try {
       await api.deleteTodo(id);
       setTodos((current) => current.filter((todo) => todo._id !== id));
-    } catch (error) {
+    } catch (err) {
       setActionError(err.message);
     }
   }
@@ -54,9 +54,9 @@ export function useTodos() {
 
     const updated = await api.updateTodo(id, changes);
     setTodos((current) =>
-      current.map((todo) => (todo._id == id ? updated : todo)),
+      current.map((todo) => (todo._id === id ? updated : todo)),
     );
   }
 
-  return { todos, loading, error, addTodo, toggleTodo, removeTodo, editTodo };
+  return { todos, loading, error,actionError, addTodo, toggleTodo, removeTodo, editTodo };
 }

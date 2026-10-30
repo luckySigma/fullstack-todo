@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 function TodoItem({ todo, onToggle, onEdit, onDelete }) {
   const [isEditing, setIsEditing] = useState(false);
