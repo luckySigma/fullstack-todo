@@ -43,6 +43,11 @@ form button {
   border: none;
 }
 
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -85,6 +90,12 @@ ul {
 
 .todo-item.done .todo-title {
   text-decoration: line-through;
+}
+
+.save {
+  background: #2563eb;
+  color: white;
+  border: none;
 }
 
 .delete {

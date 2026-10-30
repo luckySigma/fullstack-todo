@@ -23,7 +23,7 @@ function TodoItem({ todo, onToggle, onEdit, onDelete }) {
             onChange={(e) => setDescription(e.target.value)}
           />
         </div>
-        <button onClick={handleSave}>Save</button>
+        <button onClick={handleSave} disabled={!title.trim()}>Save</button>
         <button onClick={() => setIsEditing(false)}>Cancel</button>
       </li>
     );
