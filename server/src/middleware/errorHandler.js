@@ -1,5 +1,3 @@
-import mongoose from "mongoose";
-
 export function errorHandler(err, req, res, next) {
   if (err.name === "ValidationError") {
     const message = Object.values(err.errors)[0].message;
