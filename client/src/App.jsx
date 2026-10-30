@@ -6,7 +6,16 @@ import { useTodos } from "./hooks/useTodos";
 import TodoForm from "./components/TodoForm";
 
 function App() {
-  const { todos, loading, error,actionError, addTodo, toggleTodo, removeTodo } = useTodos();
+  const {
+    todos,
+    loading,
+    error,
+    actionError,
+    addTodo,
+    toggleTodo,
+    removeTodo,
+    editTodo,
+  } = useTodos();
 
   return (
     <>
@@ -21,7 +30,9 @@ function App() {
           <p>No todos yet. Add one.</p>
         )}
 
-        {!loading && !error && todos.length > 0 && <TodoList todos={todos} onToggle={toggleTodo} onDelete={removeTodo}/>}
+        {!loading && !error && todos.length > 0 && (
+          <TodoList todos={todos} onToggle={toggleTodo} onDelete={removeTodo} onEdit={editTodo}/>
+        )}
       </main>
     </>
   );

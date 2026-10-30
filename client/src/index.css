@@ -68,6 +68,14 @@ ul {
   color: #6b7280;
 }
 
+.todo-item div input,
+.todo-item div textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 6px;
+}
+
 .todo-item.done {
   opacity: 0.5;
 }

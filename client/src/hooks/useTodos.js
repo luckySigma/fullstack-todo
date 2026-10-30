@@ -49,5 +49,14 @@ export function useTodos() {
     }
   }
 
-  return { todos, loading, error, addTodo, toggleTodo, removeTodo };
+  async function editTodo(id, changes) {
+    setActionError(null);
+
+    const updated = await api.updateTodo(id, changes);
+    setTodos((current) =>
+      current.map((todo) => (todo._id == id ? updated : todo)),
+    );
+  }
+
+  return { todos, loading, error, addTodo, toggleTodo, removeTodo, editTodo };
 }
