@@ -12,7 +12,7 @@ const todoSchema = new mongoose.Schema(
       type: String,
       trim: true,
       default: "",
-      maxLength: [500, "Title must be 500 characters or less"],
+      maxLength: [500, "Description must be 500 characters or less"],
     },
     done: {
       type: Boolean,
