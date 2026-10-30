@@ -50,6 +50,7 @@ ul {
 
 .todo-item {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
   padding: 10px;
@@ -61,6 +62,8 @@ ul {
 
 .todo-item > div {
   flex: 1;
+  min-width: 180px;
+  overflow-wrap: anywhere;
 }
 
 .todo-item p {
@@ -91,4 +94,10 @@ ul {
 .error {
   color: red;
   margin: 0;
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin: 20px auto;
+  }
 }
