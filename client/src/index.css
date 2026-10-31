@@ -1,0 +1,114 @@
+body {
+  font-family: system-ui, sans-serif;
+  background: #f6f7f9;
+  margin: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+input,
+textarea {
+  padding: 8px;
+  font: inherit;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  padding: 6px 12px;
+  font: inherit;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+}
+
+form button {
+  align-self: flex-end;
+  background: #2563eb;
+  color: white;
+  border: none;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  margin-bottom: 8px;
+  background: white;
+  border-radius: 6px;
+  transition: opacity 0.2s;
+}
+
+.todo-item > div {
+  flex: 1;
+  min-width: 180px;
+  overflow-wrap: anywhere;
+}
+
+.todo-item p {
+  margin: 4px 0 0;
+  color: #6b7280;
+}
+
+.todo-item div input,
+.todo-item div textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 6px;
+}
+
+.todo-item.done {
+  opacity: 0.5;
+}
+
+.todo-item.done .todo-title {
+  text-decoration: line-through;
+}
+
+.save {
+  background: #2563eb;
+  color: white;
+  border: none;
+}
+
+.delete {
+  color: red;
+}
+
+.error {
+  color: red;
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin: 20px auto;
+  }
+}
